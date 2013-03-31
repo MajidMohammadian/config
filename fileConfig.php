@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Cheshme
- * @subpackage  JAFileConfig
+ * @subpackage  CFileConfig
  *
  * @since		1.0
  *
@@ -10,7 +10,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
-class JAFileConfig
+class CFileConfig
 {
 	/**
 	 * @var    string	Directory file
@@ -78,7 +78,7 @@ class JAFileConfig
 	 */
 	public function writeConfig($param = array())
 	{
-		JAFileConfig::loadObject();
+		CFileConfig::loadObject();
 		$file = file_get_contents($this->path . DS . $this->name);
 		foreach($this->object as $keyObject => $valueObject)
 		{
@@ -106,7 +106,7 @@ class JAFileConfig
 	 */
 	public function getConfig($param)
 	{
-		JAFileConfig::loadObject();
+		CFileConfig::loadObject();
 		return $this->object->$param;
 	}
 }
